@@ -7,6 +7,15 @@
 
 import Foundation
 
-struct BowlingGameModel{
+class BowlingGameModel{
     
+    private var rolls = [Int]()
+
+    func roll(_ pins: Int) {
+        rolls.append(pins)
+    }
+
+    func score() -> Int {
+        return 0
+    }
 }
