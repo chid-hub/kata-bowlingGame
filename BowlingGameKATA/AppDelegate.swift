@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BowlingGameKATA
 //
-//  Created by Chidhambaram S on 14/12/23.
+//  Created by  on 14/12/23.
 //
 
 import UIKit
