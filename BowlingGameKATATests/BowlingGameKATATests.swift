@@ -10,11 +10,11 @@ import XCTest
 
 final class BowlingGameKATATests: XCTestCase {
 
-    var bowlingGame: BowlingGameModel!
-
+    var bowlingGame: BowlingGameViewModel!
     override func setUp() {
         super.setUp()
-        bowlingGame = BowlingGameModel()
+        let model = BowlingGameModel()
+        bowlingGame = BowlingGameViewModel(bowlingGameModel: model)
     }
     // Test case: all strikes
     func testAllStrikes() {

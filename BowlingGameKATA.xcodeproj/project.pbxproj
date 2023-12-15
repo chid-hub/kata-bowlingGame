@@ -18,6 +18,10 @@
 		1C1FD07D2B2B19DB00092A0B /* BowlingGameKATAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FD07C2B2B19DB00092A0B /* BowlingGameKATAUITestsLaunchTests.swift */; };
 		1CF50DCA2B2B223300D58DF1 /* BowlingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DC92B2B223300D58DF1 /* BowlingGameViewModel.swift */; };
 		1CF50DCC2B2B225B00D58DF1 /* BowlingGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DCB2B2B225B00D58DF1 /* BowlingGameModel.swift */; };
+		1CF50DCE2B2B449300D58DF1 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DCD2B2B449300D58DF1 /* Frame.swift */; };
+		1CF50DD02B2B451000D58DF1 /* OpenFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DCF2B2B451000D58DF1 /* OpenFrameModel.swift */; };
+		1CF50DD22B2B466100D58DF1 /* StrikeFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */; };
+		1CF50DD42B2B46D200D58DF1 /* SpareFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		1C1FD07C2B2B19DB00092A0B /* BowlingGameKATAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameKATAUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1CF50DC92B2B223300D58DF1 /* BowlingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameViewModel.swift; sourceTree = "<group>"; };
 		1CF50DCB2B2B225B00D58DF1 /* BowlingGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameModel.swift; sourceTree = "<group>"; };
+		1CF50DCD2B2B449300D58DF1 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		1CF50DCF2B2B451000D58DF1 /* OpenFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFrameModel.swift; sourceTree = "<group>"; };
+		1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikeFrameModel.swift; sourceTree = "<group>"; };
+		1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareFrameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +111,12 @@
 		1C1FD0582B2B19D900092A0B /* BowlingGameKATA */ = {
 			isa = PBXGroup;
 			children = (
-				1C1FD0592B2B19D900092A0B /* AppDelegate.swift */,
-				1C1FD05B2B2B19D900092A0B /* SceneDelegate.swift */,
+				1C1FD0672B2B19DB00092A0B /* Info.plist */,
+				1CF50DD82B2B645C00D58DF1 /* App */,
 				1CF50DC62B2B214C00D58DF1 /* View */,
 				1CF50DC82B2B215E00D58DF1 /* ViewModel */,
 				1CF50DC72B2B215300D58DF1 /* Model */,
-				1C1FD05F2B2B19D900092A0B /* Main.storyboard */,
-				1C1FD0622B2B19DB00092A0B /* Assets.xcassets */,
-				1C1FD0642B2B19DB00092A0B /* LaunchScreen.storyboard */,
-				1C1FD0672B2B19DB00092A0B /* Info.plist */,
+				1CF50DD72B2B643500D58DF1 /* Storyboard */,
 			);
 			path = BowlingGameKATA;
 			sourceTree = "<group>";
@@ -144,7 +149,11 @@
 		1CF50DC72B2B215300D58DF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1CF50DCD2B2B449300D58DF1 /* Frame.swift */,
 				1CF50DCB2B2B225B00D58DF1 /* BowlingGameModel.swift */,
+				1CF50DCF2B2B451000D58DF1 /* OpenFrameModel.swift */,
+				1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */,
+				1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +164,25 @@
 				1CF50DC92B2B223300D58DF1 /* BowlingGameViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1CF50DD72B2B643500D58DF1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1C1FD05F2B2B19D900092A0B /* Main.storyboard */,
+				1C1FD0642B2B19DB00092A0B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1CF50DD82B2B645C00D58DF1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1C1FD0592B2B19D900092A0B /* AppDelegate.swift */,
+				1C1FD05B2B2B19D900092A0B /* SceneDelegate.swift */,
+				1C1FD0622B2B19DB00092A0B /* Assets.xcassets */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,11 +316,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF50DD42B2B46D200D58DF1 /* SpareFrameModel.swift in Sources */,
 				1CF50DCC2B2B225B00D58DF1 /* BowlingGameModel.swift in Sources */,
 				1C1FD05E2B2B19D900092A0B /* BowlingGameViewController.swift in Sources */,
 				1CF50DCA2B2B223300D58DF1 /* BowlingGameViewModel.swift in Sources */,
+				1CF50DD02B2B451000D58DF1 /* OpenFrameModel.swift in Sources */,
+				1CF50DCE2B2B449300D58DF1 /* Frame.swift in Sources */,
 				1C1FD05A2B2B19D900092A0B /* AppDelegate.swift in Sources */,
 				1C1FD05C2B2B19D900092A0B /* SceneDelegate.swift in Sources */,
+				1CF50DD22B2B466100D58DF1 /* StrikeFrameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,49 +9,52 @@ import Foundation
 
 class BowlingGameModel{
     
-    private var rolls = [Int]()
+    var rolls: [Int] = []
+    var frames: [Frame] = []
     
-    func roll(_ pins: Int) {
+    func roll(pins: Int) {
         rolls.append(pins)
+        updateFrames()
     }
+    
+    private func updateFrames() {
+        frames = []
+        var index = 0
+        
+        for _ in 0..<10 { // 10 frames in a game
+            guard index < rolls.count else {
+                break // Stop processing frames if there are not enough rolls
+            }
+            
+            let firstRoll = rolls[index]
+            
+            if firstRoll == 10 { // Strike
+                frames.append(StrikeFrameModel(rolls: rolls, staringIndex: index))
+                index += 1
+            } else {
+                guard index + 1 < rolls.count else {
+                    break // Stop processing frames if there are not enough rolls
+                }
+                
+                let secondRoll = rolls[index + 1]
+                
+                if firstRoll + secondRoll == 10 { // Spare
+                    frames.append(SpareFrameModel(rolls: rolls, staringIndex: index))
+                } else {
+                    frames.append(OpenFrameModel(rolls: rolls, staringIndex: index))
+                }
+                
+                index += 2
+            }
+        }
+    }
+    
     
     func score() -> Int {
         var total = 0
-        var frameIndex = 0
-        
-        for _ in 0..<10 {
-            if isStrike(frameIndex) {
-                total += 10 + strikeBonus(frameIndex)
-                frameIndex += 1
-            } else if isSpare(frameIndex) {
-                total += 10 + spareBonus(frameIndex)
-                frameIndex += 2
-            } else {
-                total += openFrameScore(frameIndex)
-                frameIndex += 2
-            }
+        for frame in frames {
+            total += frame.score()
         }
         return total
     }
-    
-    private func isStrike(_ frameIndex: Int) -> Bool {
-        return rolls[frameIndex] == 10
-    }
-    
-    private func isSpare(_ frameIndex: Int) -> Bool {
-        return openFrameScore(frameIndex) == 10
-    }
-    
-    private func strikeBonus(_ frameIndex: Int) -> Int {
-        return rolls[frameIndex + 1] + rolls[frameIndex + 2]
-    }
-    
-    private func spareBonus(_ frameIndex: Int) -> Int {
-        return rolls[frameIndex + 2]
-    }
-    
-    private func openFrameScore(_ frameIndex: Int) -> Int {
-        return rolls[frameIndex] + rolls[frameIndex + 1]
-    }
-    
 }
