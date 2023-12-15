@@ -18,7 +18,7 @@ class StrikeFrameModel: Frame {
      }
 
     func score() -> Int {
-        return 10 + firstBonusBall() + secondBonusBall()
+        return AppConstants.strikeScore + firstBonusBall() + secondBonusBall()
     }
 
     func frameSize() -> Int {

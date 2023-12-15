@@ -21,12 +21,12 @@ class BowlingGameModel{
         frames = []
         var index = 0
         
-        for _ in 0..<10 { // 10 frames in a game
+        for _ in 0..<AppConstants.maxFrames { // 10 frames in a game
             guard index < rolls.count else { break } // Stop processing frames if there are not enough rolls
             
             let firstRoll = rolls[index]
             
-            if firstRoll == 10 { // Strike
+            if firstRoll == AppConstants.pinsPerFrame { // Strike
                 frames.append(StrikeFrameModel(rolls: rolls, staringIndex: index))
                 index += 1
             } else {
@@ -34,7 +34,7 @@ class BowlingGameModel{
                 
                 let secondRoll = rolls[index + 1]
                 
-                if firstRoll + secondRoll == 10 { // Spare
+                if firstRoll + secondRoll == AppConstants.pinsPerFrame { // Spare
                     frames.append(SpareFrameModel(rolls: rolls, staringIndex: index))
                 } else {
                     frames.append(OpenFrameModel(rolls: rolls, staringIndex: index))

@@ -20,17 +20,7 @@ class FrameCell: UICollectionViewCell {
         secondThrowScoreLabel.text = ""
         thirdThrowScoreLabel.isHidden = true
         
-        if let strikeframe = frame as? StrikeFrameModel, index == 9 {
-            firstThrowScoreLabel.text = "X"
-            secondThrowScoreLabel.text = "\(strikeframe.firstBonusBall())"
-            thirdThrowScoreLabel.text = "\(strikeframe.secondBonusBall())"
-            thirdThrowScoreLabel.isHidden = false
-        } else if let spareFrame = frame as? SpareFrameModel, index == 9 {
-            firstThrowScoreLabel.text = "\(spareFrame.currentRollingScore())"
-            secondThrowScoreLabel.text = "/"
-            thirdThrowScoreLabel.text = "\(spareFrame.firstBonusBall())"
-            thirdThrowScoreLabel.isHidden = false
-        }else if let openFrame = frame as? OpenFrameModel {
+        if let openFrame = frame as? OpenFrameModel {
             // Handle OpenFrame
             firstThrowScoreLabel.text = "\(openFrame.currentRollingScore())"
             secondThrowScoreLabel.text = "\(openFrame.nextRollingScore())"
@@ -38,9 +28,18 @@ class FrameCell: UICollectionViewCell {
             // Handle SpareFrame
             firstThrowScoreLabel.text = "\(spareFrame.currentRollingScore())"
             secondThrowScoreLabel.text = "/"
-        } else if frame is StrikeFrameModel {
+            if index == 9 {
+                thirdThrowScoreLabel.text = "\(spareFrame.firstBonusBall())"
+                thirdThrowScoreLabel.isHidden = false
+            }
+        }else if let strikeframe = frame as? StrikeFrameModel{
             // Handle StrikeFrame
             firstThrowScoreLabel.text = "X"
+            if index == 9 {
+                secondThrowScoreLabel.text = "\(strikeframe.firstBonusBall())"
+                thirdThrowScoreLabel.text = "\(strikeframe.secondBonusBall())"
+                thirdThrowScoreLabel.isHidden = false
+            }
         }
     }
 }

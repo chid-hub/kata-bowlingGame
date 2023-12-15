@@ -18,7 +18,7 @@ class SpareFrameModel: Frame, Rolls {
      }
     
      func score() -> Int {
-        return 10 + firstBonusBall()
+        return AppConstants.spareScore + firstBonusBall()
      }
 
     func frameSize() -> Int {

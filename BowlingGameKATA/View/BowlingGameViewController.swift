@@ -10,11 +10,7 @@ import UIKit
 class BowlingGameViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
-
     @IBOutlet weak var collectionView: UICollectionView!
-
-    private var firstRoll: Int?
-    private var secondRoll: Int?
     
     private var viewModel: BowlingGameViewModel!
     
@@ -35,12 +31,7 @@ class BowlingGameViewController: UIViewController {
     @IBAction func numberOfPinKnokedButtonTapped(_ sender: UIButton) {
        let pinsKnockedDown = sender.tag
        viewModel.roll(pinsKnockedDown)
-
-        if let firstRoll = firstRoll, firstRoll < 10 {
-            
-        }
         updateScore()
-
     }
 
     @IBAction func resetButtonTapped(_ sender: UIButton) {
