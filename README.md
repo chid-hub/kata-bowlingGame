@@ -7,8 +7,8 @@ This Swift project implements a simple scoring system for American Ten-Pin Bowli
 ## How to Use
 
 1. Clone the repository:
-2. 
-    git clone <repository-url>
+
+   git clone <repository-url>
 
 3. Open the Xcode project file:
    
