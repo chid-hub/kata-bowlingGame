@@ -9,6 +9,7 @@ import Foundation
 
 // Protocol
 protocol BowlingGameViewModelProtocol {
+    func roll(_ pins: Int)
     func score() -> Int
 }
 
@@ -27,9 +28,16 @@ class BowlingGameViewModel: BowlingGameViewModelProtocol {
     func score() -> Int {
         return model.score()
     }
+}
+
+extension BowlingGameViewModel {
     
     func getAllFrames() -> [Frame] {
         return model.frames
+    }
+
+    func resetGame()  {
+        model.resetGame()
     }
 
 }

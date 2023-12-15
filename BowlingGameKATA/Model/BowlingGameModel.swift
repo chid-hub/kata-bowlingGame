@@ -22,9 +22,7 @@ class BowlingGameModel{
         var index = 0
         
         for _ in 0..<10 { // 10 frames in a game
-            guard index < rolls.count else {
-                break // Stop processing frames if there are not enough rolls
-            }
+            guard index < rolls.count else { break } // Stop processing frames if there are not enough rolls
             
             let firstRoll = rolls[index]
             
@@ -32,9 +30,7 @@ class BowlingGameModel{
                 frames.append(StrikeFrameModel(rolls: rolls, staringIndex: index))
                 index += 1
             } else {
-                guard index + 1 < rolls.count else {
-                    break // Stop processing frames if there are not enough rolls
-                }
+                guard index + 1 < rolls.count else { break } // Stop processing frames if there are not enough rolls
                 
                 let secondRoll = rolls[index + 1]
                 
@@ -47,6 +43,11 @@ class BowlingGameModel{
                 index += 2
             }
         }
+    }
+    
+    func resetGame() {
+        rolls = []
+        updateFrames()
     }
     
     

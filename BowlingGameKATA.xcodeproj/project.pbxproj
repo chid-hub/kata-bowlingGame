@@ -22,6 +22,9 @@
 		1CF50DD02B2B451000D58DF1 /* OpenFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DCF2B2B451000D58DF1 /* OpenFrameModel.swift */; };
 		1CF50DD22B2B466100D58DF1 /* StrikeFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */; };
 		1CF50DD42B2B46D200D58DF1 /* SpareFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */; };
+		1CF50DDB2B2C6E8C00D58DF1 /* FrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DDA2B2C6E8B00D58DF1 /* FrameCell.swift */; };
+		1CF50DDD2B2C78F500D58DF1 /* FrameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF50DDC2B2C78F500D58DF1 /* FrameCell.xib */; };
+		1CF50DE12B2CA53600D58DF1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DE02B2CA53600D58DF1 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		1CF50DCF2B2B451000D58DF1 /* OpenFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFrameModel.swift; sourceTree = "<group>"; };
 		1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikeFrameModel.swift; sourceTree = "<group>"; };
 		1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpareFrameModel.swift; sourceTree = "<group>"; };
+		1CF50DDA2B2C6E8B00D58DF1 /* FrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCell.swift; sourceTree = "<group>"; };
+		1CF50DDC2B2C78F500D58DF1 /* FrameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FrameCell.xib; sourceTree = "<group>"; };
+		1CF50DE02B2CA53600D58DF1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +119,10 @@
 			children = (
 				1C1FD0672B2B19DB00092A0B /* Info.plist */,
 				1CF50DD82B2B645C00D58DF1 /* App */,
+				1CF50DD72B2B643500D58DF1 /* Storyboard */,
 				1CF50DC62B2B214C00D58DF1 /* View */,
 				1CF50DC82B2B215E00D58DF1 /* ViewModel */,
 				1CF50DC72B2B215300D58DF1 /* Model */,
-				1CF50DD72B2B643500D58DF1 /* Storyboard */,
 			);
 			path = BowlingGameKATA;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1C1FD05D2B2B19D900092A0B /* BowlingGameViewController.swift */,
+				1CF50DD92B2C6E6E00D58DF1 /* CollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,11 +156,11 @@
 		1CF50DC72B2B215300D58DF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1CF50DCD2B2B449300D58DF1 /* Frame.swift */,
 				1CF50DCB2B2B225B00D58DF1 /* BowlingGameModel.swift */,
 				1CF50DCF2B2B451000D58DF1 /* OpenFrameModel.swift */,
 				1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */,
 				1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */,
+				1CF50DCD2B2B449300D58DF1 /* Frame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,9 +187,19 @@
 			children = (
 				1C1FD0592B2B19D900092A0B /* AppDelegate.swift */,
 				1C1FD05B2B2B19D900092A0B /* SceneDelegate.swift */,
+				1CF50DE02B2CA53600D58DF1 /* AppConstants.swift */,
 				1C1FD0622B2B19DB00092A0B /* Assets.xcassets */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		1CF50DD92B2C6E6E00D58DF1 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1CF50DDA2B2C6E8B00D58DF1 /* FrameCell.swift */,
+				1CF50DDC2B2C78F500D58DF1 /* FrameCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C1FD0662B2B19DB00092A0B /* LaunchScreen.storyboard in Resources */,
+				1CF50DDD2B2C78F500D58DF1 /* FrameCell.xib in Resources */,
 				1C1FD0632B2B19DB00092A0B /* Assets.xcassets in Resources */,
 				1C1FD0612B2B19D900092A0B /* Main.storyboard in Resources */,
 			);
@@ -317,10 +335,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF50DD42B2B46D200D58DF1 /* SpareFrameModel.swift in Sources */,
+				1CF50DDB2B2C6E8C00D58DF1 /* FrameCell.swift in Sources */,
 				1CF50DCC2B2B225B00D58DF1 /* BowlingGameModel.swift in Sources */,
 				1C1FD05E2B2B19D900092A0B /* BowlingGameViewController.swift in Sources */,
 				1CF50DCA2B2B223300D58DF1 /* BowlingGameViewModel.swift in Sources */,
 				1CF50DD02B2B451000D58DF1 /* OpenFrameModel.swift in Sources */,
+				1CF50DE12B2CA53600D58DF1 /* AppConstants.swift in Sources */,
 				1CF50DCE2B2B449300D58DF1 /* Frame.swift in Sources */,
 				1C1FD05A2B2B19D900092A0B /* AppDelegate.swift in Sources */,
 				1C1FD05C2B2B19D900092A0B /* SceneDelegate.swift in Sources */,

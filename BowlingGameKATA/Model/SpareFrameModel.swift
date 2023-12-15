@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SpareFrameModel: Frame {
+class SpareFrameModel: Frame, Rolls {
     
     let rolls: [Int]
     let startingRoll: Int
@@ -23,5 +23,13 @@ class SpareFrameModel: Frame {
 
     func frameSize() -> Int {
         return 2
+    }
+    
+    func nextRollingScore() -> Int {
+        let index = startingRoll + 1
+        guard index < rolls.count else {
+            return 0
+        }
+        return rolls[index]
     }
 }

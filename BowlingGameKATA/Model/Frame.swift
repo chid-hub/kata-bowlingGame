@@ -12,11 +12,15 @@ protocol Frame {
     var startingRoll: Int { get }
 
     func score() -> Int
+    func currentRollingScore() -> Int
     func frameSize() -> Int
     func firstBonusBall() -> Int
     func secondBonusBall() -> Int
 }
 
+protocol Rolls{
+    func nextRollingScore() -> Int
+}
 extension Frame {
     
     func firstBonusBall() -> Int {
@@ -35,5 +39,9 @@ extension Frame {
         }
         
         return rolls[index]
+    }
+    
+    func currentRollingScore() -> Int {
+        return rolls[startingRoll]
     }
 }
