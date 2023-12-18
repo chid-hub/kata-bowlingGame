@@ -12,7 +12,7 @@ This Swift project implements a simple scoring system for American Ten-Pin Bowli
 
 3. Open the Xcode project file:
    
-    open BowlingGame.xcodeproj
+    open BowlingGameKATA.xcodeproj
 
 4. Run the project in Xcode.
 
