@@ -10,15 +10,23 @@ import Foundation
 class BowlingGameModel{
     
     var rolls: [Int] = []
-    var frames: [Frame] = []
+    var frames: Frames = Frames(frames: [])
     
     func roll(pins: Int) {
         rolls.append(pins)
         updateFrames()
     }
     
+    fileprivate func isSpare(_ firstRoll: Int, _ secondRoll: Int) -> Bool {
+        return firstRoll + secondRoll == AppConstants.pinsPerFrame
+    }
+    
+    fileprivate func isStrike(_ firstRoll: Int) -> Bool {
+        return firstRoll == AppConstants.pinsPerFrame
+    }
+    
     private func updateFrames() {
-        frames = []
+        frames = Frames(frames: [])
         var index = 0
         
         for _ in 0..<AppConstants.maxFrames { // 10 frames in a game
@@ -26,22 +34,22 @@ class BowlingGameModel{
             
             let firstRoll = rolls[index]
             
-            if firstRoll == AppConstants.pinsPerFrame { // Strike
+            if isStrike(firstRoll) {
                 frames.append(StrikeFrameModel(rolls: rolls, staringIndex: index))
                 index += 1
-            } else {
-                guard index + 1 < rolls.count else { break } // Stop processing frames if there are not enough rolls
-                
-                let secondRoll = rolls[index + 1]
-                
-                if firstRoll + secondRoll == AppConstants.pinsPerFrame { // Spare
-                    frames.append(SpareFrameModel(rolls: rolls, staringIndex: index))
-                } else {
-                    frames.append(OpenFrameModel(rolls: rolls, staringIndex: index))
-                }
-                
-                index += 2
+                continue
             }
+            
+            guard index + 1 < rolls.count else { break } // Stop processing frames if there are not enough rolls
+            
+            let secondRoll = rolls[index + 1]
+            
+            if isSpare(firstRoll, secondRoll) {
+                frames.append(SpareFrameModel(rolls: rolls, staringIndex: index))
+            } else {
+                frames.append(OpenFrameModel(rolls: rolls, staringIndex: index))
+            }
+            index += 2
         }
     }
     
@@ -52,10 +60,6 @@ class BowlingGameModel{
     
     
     func score() -> Int {
-        var total = 0
-        for frame in frames {
-            total += frame.score()
-        }
-        return total
+        return frames.calculateScore()
     }
 }

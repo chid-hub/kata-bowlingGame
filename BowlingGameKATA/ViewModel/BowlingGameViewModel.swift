@@ -33,7 +33,7 @@ class BowlingGameViewModel: BowlingGameViewModelProtocol {
 extension BowlingGameViewModel {
     
     func getAllFrames() -> [Frame] {
-        return model.frames
+        return model.frames.getAllFrames()
     }
 
     func resetGame()  {

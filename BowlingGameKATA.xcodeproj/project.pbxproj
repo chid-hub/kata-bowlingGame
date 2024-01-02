@@ -16,6 +16,7 @@
 		1C1FD0712B2B19DB00092A0B /* BowlingGameKATATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FD0702B2B19DB00092A0B /* BowlingGameKATATests.swift */; };
 		1C1FD07B2B2B19DB00092A0B /* BowlingGameKATAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FD07A2B2B19DB00092A0B /* BowlingGameKATAUITests.swift */; };
 		1C1FD07D2B2B19DB00092A0B /* BowlingGameKATAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1FD07C2B2B19DB00092A0B /* BowlingGameKATAUITestsLaunchTests.swift */; };
+		1C2E9B452B442982002F2B05 /* Frames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2E9B442B442982002F2B05 /* Frames.swift */; };
 		1CF50DCA2B2B223300D58DF1 /* BowlingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DC92B2B223300D58DF1 /* BowlingGameViewModel.swift */; };
 		1CF50DCC2B2B225B00D58DF1 /* BowlingGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DCB2B2B225B00D58DF1 /* BowlingGameModel.swift */; };
 		1CF50DCE2B2B449300D58DF1 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF50DCD2B2B449300D58DF1 /* Frame.swift */; };
@@ -58,6 +59,7 @@
 		1C1FD0762B2B19DB00092A0B /* BowlingGameKATAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingGameKATAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C1FD07A2B2B19DB00092A0B /* BowlingGameKATAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameKATAUITests.swift; sourceTree = "<group>"; };
 		1C1FD07C2B2B19DB00092A0B /* BowlingGameKATAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameKATAUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1C2E9B442B442982002F2B05 /* Frames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frames.swift; sourceTree = "<group>"; };
 		1CF50DC92B2B223300D58DF1 /* BowlingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameViewModel.swift; sourceTree = "<group>"; };
 		1CF50DCB2B2B225B00D58DF1 /* BowlingGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameModel.swift; sourceTree = "<group>"; };
 		1CF50DCD2B2B449300D58DF1 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				1CF50DD12B2B466100D58DF1 /* StrikeFrameModel.swift */,
 				1CF50DD32B2B46D100D58DF1 /* SpareFrameModel.swift */,
 				1CF50DCD2B2B449300D58DF1 /* Frame.swift */,
+				1C2E9B442B442982002F2B05 /* Frames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				1CF50DCC2B2B225B00D58DF1 /* BowlingGameModel.swift in Sources */,
 				1C1FD05E2B2B19D900092A0B /* BowlingGameViewController.swift in Sources */,
 				1CF50DCA2B2B223300D58DF1 /* BowlingGameViewModel.swift in Sources */,
+				1C2E9B452B442982002F2B05 /* Frames.swift in Sources */,
 				1CF50DD02B2B451000D58DF1 /* OpenFrameModel.swift in Sources */,
 				1CF50DE12B2CA53600D58DF1 /* AppConstants.swift in Sources */,
 				1CF50DCE2B2B449300D58DF1 /* Frame.swift in Sources */,
